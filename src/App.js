@@ -9,27 +9,32 @@ function App() {
       <nav className="nav-bar">
         <ul className="nav-list">
           <li className="nav-link align--left">
-            <Link to="/" className="link" >
+            <Link to="/" className="link">
               Home
-              </Link>
+            </Link>
           </li>
           <li className="nav-link">
-            <Link to="/sorting" className="link" >
+            <Link to="/sorting" className="link">
               Sorting
-              </Link>
+            </Link>
           </li>
           <li className="nav-link">
-            <Link to="/pathfinding" className="link" >
+            <Link to="/pathfinding" className="link">
               Path Finding
-              </Link>
+            </Link>
           </li>
         </ul>
       </nav>
       <Routes>
         <Route path="/" element={<h1>HELLO</h1>} />
         <Route path="/sorting" element={<Sorting />} />
-        <Route path="/pathfinding" element={<PathFinding/>} />
+        <Route path="/pathfinding" element={<PathFinding />} />
       </Routes>
+      <footer className="footer-section">
+        <p>
+          Made by <a href="github.com/cmdsiraj">SIRAJ</a>
+        </p>
+      </footer>
     </>
   );
 }

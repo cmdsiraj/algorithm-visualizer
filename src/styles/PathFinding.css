@@ -1,21 +1,47 @@
-.map{
+.map {
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.4rem; */
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  /* gap: 0.4rem; */
+}
+
+.cell {
+  width: 2.4rem;
+  height: 2.2rem;
+  /* margin: 0.5px; */
+  /* background-color: black; */
+  border: 1px solid black;
+}
+
+.path-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 0 4rem;
+  background-color: azure;
+}
+
+.section-sideNav {
     display: flex;
     flex-direction: column;
-    /* gap: 0.4rem; */
-    width: fit-content;
-    margin: 2rem auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2rem 4rem;
+    gap: 2rem
 }
 
-.row{
-    display: flex;
-    flex-direction: row;
-    /* gap: 0.4rem; */
+.section-sideNav button {
+    border: none;
+    padding: 1rem 3.2rem;
+    background-color: antiquewhite;
+    font-size: 1.8rem;
 }
 
-.cell{
-    width: 2.4rem;
-    height: 2.2rem;
-    /* margin: 0.5px; */
-    /* background-color: black; */
-    border: 1px solid black;
+.section-map {
+
 }
