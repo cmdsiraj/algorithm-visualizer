@@ -1,0 +1,71 @@
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    gap: 8rem;
+    /* padding: 0rem 4rem; */
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    background-color: #F3EEEA;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 1.4rem 3.2rem;
+}
+
+.buttons button {
+    border: none;
+    background-color: #B4B4B3;
+    color: #862B0D;
+    padding: 1.4rem 2rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.array-container{
+    list-style: none;
+    display: flex;
+    gap: 1px;
+    align-items: flex-end;
+}
+
+.array-bar{
+    width: 2px;
+}
+
+.display-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 1.6rem 0;
+}
+
+.display-container h2{
+    font-size: 2rem;
+}
+
+.tooltip{
+    position: relative;
+}
+
+.tooltip .tooltip-text{
+    visibility: hidden;
+    /* display: none; */
+
+    position: absolute;
+    z-index: 10;
+    font-size: 0.8rem;
+    right: -32%;
+    background-color: white;
+    padding: 1rem;
+
+    transition: all 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+}

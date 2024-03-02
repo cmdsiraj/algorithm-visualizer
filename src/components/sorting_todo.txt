@@ -1,0 +1,3 @@
+---> Add pause and resume options
+---> Add speed controller
+---> Take custom array size
