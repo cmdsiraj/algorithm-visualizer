@@ -28,20 +28,77 @@
 }
 
 .section-sideNav {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 2rem 4rem;
-    gap: 2rem
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem 4rem;
+  gap: 2rem;
 }
 
 .section-sideNav button {
-    border: none;
-    padding: 1rem 3.2rem;
-    background-color: antiquewhite;
-    font-size: 1.8rem;
+  border: none;
+  padding: 1rem 3.2rem;
+  background-color: antiquewhite;
+  font-size: 1.8rem;
+  cursor: pointer;
+
+  border-radius: 2rem;
+  box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.2s ease-out;
 }
 
-.section-map {
+.section-sideNav button:active {
+  box-shadow: inset 0 0 10px 6px rgba(0, 0, 0, 0.2);
+}
 
+.section-sideNav button:hover {
+  box-shadow: 0 0 20px 12px rgba(0, 0, 0, 0.2);
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 1.2rem;
+
+  padding: 2rem 1rem;
+}
+
+.input label {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.input input {
+  font-size: 1.6rem;
+  padding: 0.6rem 0.2rem;
+  text-align: center;
+  border: 0;
+  border-radius: 2rem;
+  width: 50%;
+  background-color: inherit;
+  color: white;
+
+  transition: all 0.3s ease-in-out;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input input:focus {
+  outline: none;
+  box-shadow: 0 0 20px 6px rgb(55, 89, 101);
+
+  background-color: rgb(78, 217, 217);
+  color: black;
+  width: 100%;
 }

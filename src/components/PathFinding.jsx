@@ -5,6 +5,7 @@ import "../styles/PathFinding.css";
 import {
   getBfsAnimations,
   getDfsAnimations,
+  getDfsAstarAnimations,
 } from "../Algos/PathFindingAlgorithms";
 
 // 1 START, 2 END, 3 HURDELS
@@ -13,6 +14,7 @@ function PathFinding() {
   const [map, setMap] = useState([]);
   const [start, setStart] = useState([0, 0]);
   const [selectionType, setSelectionType] = useState(null);
+  const [numberOfWalls, setNumberOfWalls] = useState(250);
 
   const NUM_ROWS = 25;
   const NUM_COLS = 40;
@@ -29,13 +31,14 @@ function PathFinding() {
   const [end, setEnd] = useState([NUM_ROWS - 1, NUM_COLS - 1]);
 
   const init_map = useCallback(() => {
+    console.log(numberOfWalls);
     const array = [];
     for (let i = 0; i < NUM_ROWS; i++) {
       array.push(Array(NUM_COLS).fill(0));
     }
     array[0][0] = 1;
     array[NUM_ROWS - 1][NUM_COLS - 1] = 2;
-    for (let i = 0; i < 250; i++) {
+    for (let i = 0; i < numberOfWalls; i++) {
       let row = Math.floor(Math.random() * NUM_ROWS);
       let col = Math.floor(Math.random() * NUM_COLS);
       if (row === 0 && col === 0) continue;
@@ -43,7 +46,7 @@ function PathFinding() {
       array[row][col] = 3;
     }
     setMap(array);
-  }, []);
+  }, [numberOfWalls]);
 
   useEffect(() => {
     init_map();
@@ -78,6 +81,12 @@ function PathFinding() {
 
   const dfs = () => {
     const animations = getDfsAnimations([...map], start, end);
+    doAnimations(animations);
+  };
+
+  const dfsAstar = () => {
+    console.log(numberOfWalls);
+    const animations = getDfsAstarAnimations([...map], start, end);
     doAnimations(animations);
   };
 
@@ -122,11 +131,20 @@ function PathFinding() {
         <div className="section-sideNav">
           <button onClick={bfs}>Breadth First</button>
           <button onClick={dfs}>Depth First</button>
+          <button onClick={dfsAstar}>DFS A*</button>
           <button onClick={() => init_map()}>Randomize Map</button>
           <button onClick={() => setSelectionType("start")}>
             Select Start
           </button>
           <button onClick={() => setSelectionType("end")}>Select End</button>
+          <span className="input">
+            <label>Wall Count</label>
+            <input
+              type="number"
+              onChange={(e) => setNumberOfWalls(e.target.value)}
+              value={numberOfWalls}
+            />
+          </span>
         </div>
         <div className="section-map">
           <div className="map">
