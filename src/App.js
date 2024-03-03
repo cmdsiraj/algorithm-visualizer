@@ -32,7 +32,7 @@ function App() {
       </Routes>
       <footer className="footer-section">
         <p>
-          Made by <a href="github.com/cmdsiraj">SIRAJ</a>
+          Made by <a href="https://github.com/cmdsiraj">SIRAJ</a>
         </p>
       </footer>
     </>
